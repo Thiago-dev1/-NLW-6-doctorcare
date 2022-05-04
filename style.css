@@ -7,8 +7,8 @@
     --primary-color:hsl(170, 100%, 26%);
     --headline: hsl(210, 11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
-    --brand-beige: hsl(39,100%, 97%);
-    --brand-light: hsl(184, 23%, 89%)
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(184, 23%, 89%);
 
 
     font-size: 62.5%; /* 1rem = 10px */
@@ -103,13 +103,28 @@ button{
     margin: 0;
 
     color: var(--primary-color);
+    line-height: 150%;
 }
 
-header img {
+.foto{
     
-    width: 2.64rem;
+    width: 26.4rem;
     display: block;
     margin-inline: auto;
 
-    object-position: 0 2rem;
+    object-position:-2rem 2rem;
+}
+
+header::before{
+    content: "";
+    width: 100vw;
+    height: 108rem; /* = 1080px*/
+    background-color: var(--brand-light);
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
 }
