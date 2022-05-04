@@ -12,6 +12,8 @@
 
 
     font-size: 62.5%; /* 1rem = 10px */
+
+    --nav-height: 7.2rem;
 }
 
 body{
@@ -19,28 +21,46 @@ body{
     font-size: 1.6rem; /* = 16px */
     text-align: center;
 }
-
-header{
+.wrapper{
     width: 37.5rem;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 4.1rem;
+    padding-inline: 2.4rem;
 }
 
-h4{
+/*Header=============================================*/
+header{
+
+    margin-top: calc(4.1rem + var(--nav-height));
+}
+
+header::before{
+    content: "";
+    width: 100vw;
+    height: calc(108rem + var(--nav-height)); /* = 1080px*/
+    background-color: var(--brand-light);
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header h4{
     font-size: 1.4rem; /* = 14px */
     color: var(--primary-color);
     margin-bottom: 1.6rem; 
 }
 
-h1{
+header h1{
     font-size: 3.4rem;
     color: var(--headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
 
-p{
+header p{
     font-size: 1.8rem;
     line-height: 150%;
     font-weight: 400;
@@ -48,7 +68,7 @@ p{
     margin-bottom: 3.2rem;
 }
 
-button{
+header button{
     margin-bottom: 6rem;
     background: var(--primary-color);
     
@@ -71,6 +91,14 @@ button{
 
     margin-right: auto;
     margin-left: auto;
+}
+.foto{
+    
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+
+    object-position:-2rem 2rem;
 }
 
 .stats{
@@ -106,24 +134,18 @@ button{
     line-height: 150%;
 }
 
-.foto{
-    
-    width: 26.4rem;
-    display: block;
-    margin-inline: auto;
+/*navigation */
 
-    object-position:-2rem 2rem;
-}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-header::before{
-    content: "";
-    width: 100vw;
-    height: 108rem; /* = 1080px*/
-    background-color: var(--brand-light);
-    display: block;
 
-    position: absolute;
+    height: var(--nav-height);
+
+    position: fixed;
     top: 0;
-    left: 0;
-    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
 }
