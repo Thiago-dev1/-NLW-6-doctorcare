@@ -184,13 +184,23 @@ nav.scroll svg:nth-child(1) path {
     fill: white;
 }
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
     stroke: white;
 }
 
 /*menu-expanded */
 body.menu-expanded {
     overflow: hidden;
+}
+
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+body.menu-expanded > :not(nav){
+    display: none;
 }
 
 .menu,
@@ -216,6 +226,8 @@ body.menu-expanded .menu {
 
     width: 100vw;
     height: 100vw;
+
+    padding-top: var(--nav-height);
 }
 
 body.menu-expanded nav {
@@ -264,4 +276,18 @@ body.menu-expanded nav {
     align-items: center;
     justify-content: center;
     gap: 3.2rem;
+}
+
+body.menu-expanded button,
+body.menu-expanded .logo{
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path {
+    fill: white;
+}
+
+body.menu-expanded button path {
+    stroke: white;
 }
